@@ -5,6 +5,11 @@
   <title>WAYS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- model-viewer -->
+  <script type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
+  </script>
+
   <style>
     * {
       margin: 0;
@@ -13,18 +18,17 @@
     }
 
     body {
-      background: #000;
-      color: #fff;
+      background: black;
+      color: white;
       font-family: Arial, Helvetica, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    #future3d {
+    model-viewer {
       width: 100%;
       height: 60vh;
     }
@@ -32,24 +36,23 @@
     h1 {
       margin-top: 20px;
       letter-spacing: 6px;
-      font-size: 28px;
     }
 
     p {
-      margin-top: 12px;
+      margin-top: 10px;
       letter-spacing: 3px;
       opacity: 0.6;
     }
 
-    .telegram {
+    a {
       margin-top: 20px;
       text-decoration: none;
-      color: #fff;
+      color: white;
       letter-spacing: 4px;
       opacity: 0.8;
     }
 
-    .telegram:hover {
+    a:hover {
       opacity: 1;
     }
   </style>
@@ -58,17 +61,21 @@
 <body>
 
   <!-- 3D -->
-  <div id="future3d"></div>
+  <model-viewer
+    src="assets/3d/tee_model.glb"
+    auto-rotate
+    camera-controls
+    exposure="1"
+    shadow-intensity="1"
+    background-color="#000000">
+  </model-viewer>
 
   <p>NOT RELEASED YET</p>
   <h1>WAYS</h1>
 
-  <a class="telegram" href="https://t.me/+26rvJt3vV1hN2Zi" target="_blank">
+  <a href="https://t.me/+26rvJt3vV1hN2Zi" target="_blank">
     TELEGRAM
   </a>
-
-  <!-- JS -->
-  <script type="module" src="js/script.js"></script>
 
 </body>
 </html>
